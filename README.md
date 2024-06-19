@@ -2,7 +2,9 @@
 
 # CV filler
 
-Variables filled with cross checked skills between JD and your skill list. Constants pre-filled. Output is PDF tailored to the position.
+Copy paste any job description (e.g. from LinkedIn etc.) to a text file. Fill your personal skill list. The application compares the job description with your skill list, creates a intersection list of the two and generates rest of the CV as a PDF with tailored skills section.
+
+Optimize your chances against ATS systems that scan skills.
 
 ### (Optional) Install Node.js via NVM
 
