@@ -6,6 +6,8 @@ Copy paste any job description (e.g. from LinkedIn etc.) to a text file. Fill yo
 
 Optimize your chances against ATS systems that scan skills.
 
+Javascript is used to convert the initial html file to a PDF. Golang lacks sufficient tooling to do this, and it is trivial and fast in JS.
+
 ### (Optional) Install Node.js via NVM
 
 [https://github.com/nvm-sh/nvm](https://github.com/nvm-sh/nvm)
