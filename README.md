@@ -39,6 +39,7 @@ Fill `config.yaml` with your personal information.
 In the main directory, execute following commands:
 
 `go mod tidy`
+
 `go run main.go`
 
 Output should be output.html and output.pdf, that contains skills that are common (intersection) in both your skills (`config.yaml`) and `jdskills.txt`.
