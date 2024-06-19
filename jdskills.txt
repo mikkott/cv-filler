@@ -1,0 +1,10 @@
+COPY PASTE JOB DESCRIPTION HERE
+
+About the job
+
+Primary skill set:
+
+- Linux
+- Windows
+- Email
+- Any other skills

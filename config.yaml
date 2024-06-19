@@ -1,0 +1,22 @@
+skills:
+  - linux
+  - kubernetes
+  - docker
+
+name: "Fill Your Name"
+email: "your@email.com"
+phone: "+1234567890"
+linkedin: "https://www.linkedin.com/in/placeholder/"
+residence: "Kuala Lumpur, Malaysia"
+header: "Fill your ted talk here. What makes you unique and why you are the best candidate for the job."
+education: "Fill your education here. Where did you study and what did you study?"
+certificates: "Fill your certificates here. What certificates do you have and what are they in?"
+experience: |
+      <h3>Latest position</h3>
+      <p>Fill information about your latest role</p>
+      <ul>
+        <li>What you did and why</li></ul>
+      <h3>Past positions</h3>
+      <ul>
+        <li>List any other work experience here.</li>
+      </ul>
