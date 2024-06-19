@@ -17,12 +17,14 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 ```
 
 `nvm install node`
+
 `nvm use node`
 
 
 ### Initialize npm
 
 `cd js && npm init -y`
+
 `npm install puppeteer`
 
 
