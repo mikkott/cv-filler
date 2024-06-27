@@ -10,8 +10,27 @@ picture: profile.png
 linkedin: "https://www.linkedin.com/in/placeholder/"
 residence: "Kuala Lumpur, Malaysia"
 header: "Fill your ted talk here. What makes you unique and why you are the best candidate for the job."
-education: "Fill your education here. Where did you study and what did you study?"
-certificates: "Fill your certificates here. What certificates do you have and what are they in?"
+education: |
+      <div class="smallText">
+        <p class="bolded white">
+          Master Of Laundry Services
+        </p>
+        <p>
+          Stanford University, USA
+        </p>
+        <p>
+          2012 - 2016
+        </p>
+      </div>
+certificates: |
+      <div class="smallText">
+        <p class="bolded white">
+          Professional Cloud Detergent Engineer
+        </p>
+        <p>
+          2022
+        </p>
+      </div>
 experience: |
       <ul>
         <li>

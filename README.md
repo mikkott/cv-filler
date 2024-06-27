@@ -50,3 +50,7 @@ In the main directory, execute following commands:
 `go run main.go`
 
 Output should be output.html and output.pdf, that contains skills that are common (intersection) in both your skills (`config.yaml`) and `jdskills.txt`.
+
+### Creds
+
+HTML/CSS layout based on [https://gist.github.com/Iftimie/2e358c4720d6d790c837bf01ac6b4b54](https://gist.github.com/Iftimie/2e358c4720d6d790c837bf01ac6b4b54)
