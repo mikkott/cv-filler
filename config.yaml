@@ -2,11 +2,14 @@ skills:
   - linux
   - kubernetes
   - docker
+static_skills:
+  - python
 
 name: "Fill Your Name"
 email: "your@email.com"
 phone: "+1234567890"
 picture: profile.png
+citizen: "Finnish"
 linkedin: "https://www.linkedin.com/in/placeholder/"
 residence: "Kuala Lumpur, Malaysia"
 header: "Fill your ted talk here. What makes you unique and why you are the best candidate for the job."

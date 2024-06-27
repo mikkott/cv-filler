@@ -14,10 +14,11 @@ import (
 )
 
 type Config struct {
-	ConfigFile string
-	JdFile     string
-	CvSkills   []string `yaml:"skills"`
-	JdSkills   []string
+	ConfigFile   string
+	JdFile       string
+	CvSkills     []string `yaml:"skills"`
+	StaticSkills []string `yaml:"static_skills"`
+	JdSkills     []string
 }
 
 type Content struct {
@@ -31,6 +32,7 @@ type Content struct {
 	Experience   string
 	LinkedIn     string
 	Picture      string
+	Citizen      string
 	CvSkills     []string
 	CommonSkills []string
 }
@@ -66,6 +68,15 @@ func readJdSkillsFromFile(filename string) ([]string, error) {
 
 	return skills, nil
 }
+
+func readFileToString(filename string) (string, error) {
+	data, err := os.ReadFile(filename)
+	if err != nil {
+		return "", err
+	}
+	return string(data), nil
+}
+
 func loadConfigFromFile(filename string, config *Config) error {
 	data, err := os.ReadFile(filename)
 	if err != nil {
@@ -144,15 +155,22 @@ func generateHTMLFile(content *Content) error {
 				</p>
 				<p>
 					<i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
-					{{.Residence}}
+					Residence: {{.Residence}}
+				</p>
+				<p>
+					<i class="fa fa-globe contactIcon" aria-hidden="true"></i>
+					Citizenship: {{.Citizen}}
 				</p>
 				<p>
 					<i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
-					<a href={{.LinkedIn}}>linkedin.com/your-name</a>
+					<a href={{.LinkedIn}}>linkedin.com/mikko-turpeinen</a>
 					</a>
 				</p>
 				</div>
 			</div>
+
+
+			
 
 			<div class="smallTextLeftPanel bottomLineSeparator">
 				<h2>
@@ -277,6 +295,25 @@ func findCommonSkills(cvSkills []string, jdSkills []string) []string {
 	return commonSkills
 }
 
+func combineSlices(slice1 []string, slice2 []string) []string {
+	combinedSlice := append(slice1, slice2...)
+	return combinedSlice
+}
+
+func removeDuplicates(slice []string) []string {
+	uniqueStrings := make(map[string]bool)
+	result := make([]string, 0)
+
+	for _, str := range slice {
+		if !uniqueStrings[str] {
+			uniqueStrings[str] = true
+			result = append(result, str)
+		}
+	}
+
+	return result
+}
+
 func main() {
 	var config Config
 
@@ -300,8 +337,12 @@ func main() {
 	}
 
 	commonSkills := findCommonSkills(content.CvSkills, jdSkills)
-	fmt.Println(commonSkills)
-	content.CommonSkills = commonSkills
+
+	combinedSkills := combineSlices(config.StaticSkills, commonSkills)
+	fmt.Println(combinedSkills)
+	combinedSkills = removeDuplicates(combinedSkills)
+	content.CommonSkills = combinedSkills
 	generateHTMLFile(content)
 	runHTML2PDFCommand()
+
 }
