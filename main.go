@@ -126,7 +126,7 @@ func generateHTMLFile(content *Content) error {
 				<h2>
 				CONTACT
 				</h2>
-				<div class="smallText">
+				<div class="smallTextContact">
 				<p>
 					<i class="fa fa-phone contactIcon" aria-hidden="true"></i>
 					{{.Phone}}
