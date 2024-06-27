@@ -9,8 +9,7 @@ Optimize your chances against ATS systems that scan skills.
 Javascript is used to convert the initial html file to a PDF. Golang lacks sufficient tooling to do this, and it is trivial and fast in JS.
 
 
-![Example](example.png){:height="25%" width="25%"}
-
+![Example](example.png)
 
 ### (Optional) Install Node.js via NVM
 
