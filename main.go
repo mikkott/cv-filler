@@ -33,6 +33,7 @@ type Content struct {
 	LinkedIn     string
 	Picture      string
 	Citizen      string
+	Github       string
 	CvSkills     []string
 	CommonSkills []string
 }
@@ -166,11 +167,13 @@ func generateHTMLFile(content *Content) error {
 					<a href={{.LinkedIn}}>linkedin.com/mikko-turpeinen</a>
 					</a>
 				</p>
+				<p>
+					<i class="fa fa-github contactIcon" aria-hidden="true"></i>
+					<a href={{.Github}}>github.com/mikkott</a>
+					</a>
+				</p>
 				</div>
 			</div>
-
-
-			
 
 			<div class="smallTextLeftPanel bottomLineSeparator">
 				<h2>
