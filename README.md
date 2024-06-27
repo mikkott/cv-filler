@@ -4,6 +4,8 @@
 
 Copy paste any job description (e.g. from LinkedIn etc.) to a text file. Fill your personal skill list. The application compares the job description with your skill list, creates a intersection list of the two and generates rest of the CV as a PDF with tailored skills section.
 
+In addition, a list of static skills that are always included in the Skills section is configurable.
+
 Optimize your chances against ATS systems that scan skills.
 
 Javascript is used to convert the initial html file to a PDF. Golang lacks sufficient tooling to do this, and it is trivial and fast in JS.
