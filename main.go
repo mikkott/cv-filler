@@ -29,6 +29,7 @@ type Content struct {
 	Certificates string
 	Experience   string
 	LinkedIn     string
+	Picture      string
 	CvSkills     []string
 	CommonSkills []string
 }
@@ -109,31 +110,125 @@ func generateHTMLFile(content *Content) error {
 	<!DOCTYPE html>
 	<html>
 	<head>
-		<meta charset="UTF-8">
-		<title>CV</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Julius+Sans+One&family=Open+Sans&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="index.css">
 	</head>
 	<body>
-		<h1>Curriculum Vitae</h1>
-		<p>{{.Header}}</p>
-		<h2>Personal Information</h2>
-		<p>Name: {{.Name}}</p>
-		<p>Email: {{.Email}}</p>
-		<p>Phone: {{.Phone}}</p>
-		<p>LinkedIn: <a href={{.LinkedIn}}>linkedin.com/mikko-turpeinen</a></p>
-		<p>Residence: {{.Residence}}</p>
-		<h2>Experience</h2>
-		<p>{{.Experience}}</p>
-		<h2>Education</h2>
-		<p>{{.Education}}</p>
-		<h2>Certificates</h2>
-		<p>{{.Certificates}}</p>
-		<h2>Skills</h2>
-		<ul>
-			{{range .CommonSkills}}
-			<li>{{.}}</li>
-			{{end}}
-		</ul>
+	<page size="A4">
+		<div class="container">
+		<div class="leftPanel">
+			<img src={{.Picture}}/>
+			<div class="details">
+			<div class="item bottomLineSeparator">
+				<h2>
+				CONTACT
+				</h2>
+				<div class="smallText">
+				<p>
+					<i class="fa fa-phone contactIcon" aria-hidden="true"></i>
+					{{.Phone}}
+				</p>
+				<p>
+					<i class="fa fa-envelope contactIcon" aria-hidden="true"></i>
+					{{.Email}}
+					</a>
+				</p>
+				<p>
+					<i class="fa fa-map-marker contactIcon" aria-hidden="true"></i>
+					{{.Residence}}
+				</p>
+				<p>
+					<i class="fa fa-linkedin-square contactIcon" aria-hidden="true"></i>
+					<a href={{.LinkedIn}}>linkedin.com/your-name</a>
+					</a>
+				</p>
+				<p class="lastParagrafNoMarginBottom">
+					<i class="fa fa-skype contactIcon" aria-hidden="true"></i>
+					<a href="#">
+					loremipsum
+					</a>
+				</p>
+				</div>
+			</div>
+			<div class="item bottomLineSeparator">
+				<h2>
+				SKILLS
+				</h2>
+				<div class="smallText">
+					{{range .CommonSkills}}
+					<div class="skill">
+						<div>
+						<span>{{.}}</span>
+						</div>
+					</div>
+					{{end}}
+				</div>
+			</div>
+			<div class="item">
+				<h2>
+				EDUCATION
+				</h2>
+				<div class="smallText">
+				<p class="bolded white">
+					{{.Education}}
+				</p>
+
+				</div>
+			</div>
+			<div class="item">
+				<h2>
+				CERTIFICATES
+				</h2>
+				<div class="smallText">
+				<p class="bolded white">
+					{{.Certificates}}
+				</p>
+
+				</div>
+			</div>
+			</div>
+			
+		</div>
+		<div class="rightPanel">
+			<div>
+			<h1>
+				{{.Name}}
+			</h1>
+			<div class="smallText">
+				<h3>
+				DevOps Engineer
+				</h3>
+			</div>
+			</div>
+			<div>
+			<h2>
+				About me
+			</h2>
+			<div class="smallText">
+				<p>
+				{{.Header}}
+				</p>
+			</div>
+			</div>
+			<div class="workExperience">
+			<h2>
+				Work experience
+			</h2>
+				{{.Experience}}
+			</div>
+		</div>
+		</div>
+	</page>
+	<page size="A4">
+		<div class="container">
+		<div class="leftPanel">
+		</div>
+		<div class="rightPanel">
+		</div>
+	</page>   
 	</body>
 	</html>
 	`

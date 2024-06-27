@@ -6,17 +6,119 @@ skills:
 name: "Fill Your Name"
 email: "your@email.com"
 phone: "+1234567890"
+picture: profile.png
 linkedin: "https://www.linkedin.com/in/placeholder/"
 residence: "Kuala Lumpur, Malaysia"
 header: "Fill your ted talk here. What makes you unique and why you are the best candidate for the job."
 education: "Fill your education here. Where did you study and what did you study?"
 certificates: "Fill your certificates here. What certificates do you have and what are they in?"
 experience: |
-      <h3>Latest position</h3>
-      <p>Fill information about your latest role</p>
       <ul>
-        <li>What you did and why</li></ul>
-      <h3>Past positions</h3>
-      <ul>
-        <li>List any other work experience here.</li>
+        <li>
+        <div class="jobPosition">
+          <span class="bolded">
+          Senior DevOps Engineer
+          </span>
+          <span>
+          Jan 1982 - Sept 1992
+          </span>
+        </div>
+        <div class="projectName bolded">
+          <span>
+          Project name | Company name
+          </span>
+        </div>
+        <div class="smallText">
+          <p>
+          Quisque rutrum mollis ornare. In pharetra diam libero, non interdum dui imperdiet quis. Quisque aliquam sapien in libero finibus sodales. Mauris id commodo metus. In in laoreet dolor.
+          </p>
+          <ul>
+          <li>
+            Integer commodo ullamcorper mauris, id condimentum lorem elementum sed. Etiam rutrum eu elit ut hendrerit. Vestibulum congue sem ac auctor semper. Aenean quis imperdiet magna. Sed eget ullamcorper enim. Vestibulum consequat turpis eu neque efficitur blandit sed sit amet neque. Curabitur congue semper erat nec blandit.
+          </li>
+          </ul>
+          <p>
+          <span class="bolded">Skills: </span>Accounting, Word, Powerpoint
+          </p>
+        </div>
+        </li>
+
+
+        <li>
+        <div class="jobPosition">
+          <span class="bolded">
+          DevOps Engineer
+          </span>
+          <span>
+          Nov 1975 - Sept 1981
+          </span>
+        </div>
+        <div class="projectName bolded">
+          <span>
+          Project name | Company name
+          </span>
+        </div>
+        <div class="smallText">
+          <p>
+          Morbi rhoncus, tortor vel luctus tincidunt, sapien lacus vehicula augue, vitae ultrices eros diam eget mauris. Aliquam dictum nulla vel augue tristique bibendum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+          </p>
+          <ul>
+          <li>
+            <p>
+            Phasellus ac accumsan ligula. Morbi quam massa, pellentesque nec nunc nec, consectetur gravida dolor. Mauris vulputate sagittis pellentesque. Donec luctus lorem luctus purus condimentum, id ultrices lacus aliquam.
+            </p>
+          </li>
+          <li>
+            <p>
+            Quisque et lorem sagittis lacus lobortis euismod non id mi. Nulla sed tincidunt libero, placerat imperdiet magna. Quisque lectus quam, viverra eu congue ut, congue vitae metus. Sed in varius sapien. Cras et elementum tellus.
+            </p>
+          </li>
+          </ul>
+          <p>
+          <span class="bolded">Skills: </span> Writing, Photoshop
+          </p>
+        </div>
+        </li>
+
+        <li>
+        <div class="jobPosition">
+          <span class="bolded">
+          Junior DevOps Engineer
+          </span>
+          <span>
+          Jun 1970 - May 1974
+          </span>
+        </div>
+        <div class="projectName bolded">
+          <span>
+          Project name | Company name
+          </span>
+        </div>
+        <div class="smallText">
+          <p>
+          Maecenas eget semper sapien. Sed convallis nunc egestas dui convallis dictum id nec metus. Donec vestibulum justo mauris, ac congue lacus tincidunt id. Vivamus rhoncus risus ac ex varius gravida. Donec eget ullamcorper ipsum.
+          </p>
+  
+          <ul>
+          <li>
+            <p>
+            Maecenas auctor euismod felis vel semper. Nulla facilisi. Quisque quis odio dui. Morbi venenatis magna quis libero mollis facilisis. Ut semper, eros eu dictum efficitur, ligula felis aliquet ante, sed commodo odio nisi a augue. 
+            </p>
+          </li>
+          <li>
+            <p>
+            Curabitur at interdum nunc, nec sodales nulla. Nulla facilisi. Nam egestas risus sed maximus feugiat. Sed semper arcu ac dui consectetur consectetur. Nulla dignissim nec turpis id rhoncus. In hac habitasse platea dictumst. 
+            </p>
+          </li>
+          <li>
+            <p>
+            Nunc iaculis mauris nec viverra placerat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat volutpat. Vivamus sed ex et magna volutpat sodales et sed odio. 
+            </p>
+          </li>
+          </ul>
+          <p>
+          <span class="bolded">Skills: </span>Management, French
+          </p>
+        </div>
+        </li>
       </ul>
