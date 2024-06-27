@@ -347,6 +347,6 @@ func main() {
 	combinedSkills = removeDuplicates(combinedSkills)
 	content.CommonSkills = combinedSkills
 	generateHTMLFile(content)
+	fmt.Println("HTML file generated successfully!")
 	runHTML2PDFCommand()
-
 }
