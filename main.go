@@ -6,6 +6,7 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"regexp"
 	"strings"
 	"text/template"
 
@@ -34,6 +35,11 @@ type Content struct {
 	CommonSkills []string
 }
 
+func removeNonAlphabets(s string) string {
+	reg := regexp.MustCompile("[^a-zA-Z-/]+")
+	return reg.ReplaceAllString(s, "")
+}
+
 // readJdSkillsFromFile reads a file and extracts skills from it.
 // It takes a filename as input and returns a slice of strings containing the extracted skills.
 // If there is an error while reading the file, it returns nil and the error.
@@ -50,6 +56,7 @@ func readJdSkillsFromFile(filename string) ([]string, error) {
 	var skills []string
 	for scanner.Scan() {
 		skill := strings.ToLower(scanner.Text())
+		//skill = removeNonAlphabets(skill)
 		skills = append(skills, strings.Split(skill, ",")...)
 	}
 
@@ -59,7 +66,6 @@ func readJdSkillsFromFile(filename string) ([]string, error) {
 
 	return skills, nil
 }
-
 func loadConfigFromFile(filename string, config *Config) error {
 	data, err := os.ReadFile(filename)
 	if err != nil {
@@ -145,12 +151,6 @@ func generateHTMLFile(content *Content) error {
 					<a href={{.LinkedIn}}>linkedin.com/your-name</a>
 					</a>
 				</p>
-				<p class="lastParagrafNoMarginBottom">
-					<i class="fa fa-skype contactIcon" aria-hidden="true"></i>
-					<a href="#">
-					loremipsum
-					</a>
-				</p>
 				</div>
 			</div>
 
@@ -176,7 +176,7 @@ func generateHTMLFile(content *Content) error {
 
 				</div>
 			</div>
-						<div class="item bottomLineSeparator">
+			<div class="smallTextLeftPanel bottomLineSeparator">
 				<h2>
 				SKILLS
 				</h2>
@@ -251,15 +251,26 @@ func generateHTMLFile(content *Content) error {
 	return nil
 }
 
-// findCommonSkills finds the common skills between the CV skills and the job description (JD) skills.
-// It takes two slices of strings, cvSkills and jdSkills, and returns a new slice containing the common skills.
+// findCommonSkills finds the common skills between a CV and a job description.
+// It takes two slices of strings, cvSkills and jdSkills, representing the skills in the CV and job description, respectively.
+// It returns a slice of strings containing the common skills found.
 func findCommonSkills(cvSkills []string, jdSkills []string) []string {
 	commonSkills := make([]string, 0)
 	for _, cvSkill := range cvSkills {
-		for _, jdSkill := range jdSkills {
+		cvSkill = removeNonAlphabets(cvSkill)
+		for i, jdSkill := range jdSkills {
+			jdSkill = removeNonAlphabets(jdSkill)
 			if cvSkill == jdSkill {
 				commonSkills = append(commonSkills, cvSkill)
 				break
+			}
+			if i > 0 && i < len(jdSkills)-1 {
+				prevWord := removeNonAlphabets(jdSkills[i-1])
+				nextWord := removeNonAlphabets(jdSkills[i+1])
+				if cvSkill == prevWord+" "+jdSkill || cvSkill == jdSkill+" "+nextWord {
+					commonSkills = append(commonSkills, cvSkill)
+					break
+				}
 			}
 		}
 	}
@@ -289,6 +300,7 @@ func main() {
 	}
 
 	commonSkills := findCommonSkills(content.CvSkills, jdSkills)
+	fmt.Println(commonSkills)
 	content.CommonSkills = commonSkills
 	generateHTMLFile(content)
 	runHTML2PDFCommand()
