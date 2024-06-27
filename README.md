@@ -8,7 +8,7 @@ In addition, a list of static skills that are always included in the Skills sect
 
 Optimize your chances against ATS systems that scan skills.
 
-Javascript is used to convert the initial html file to a PDF. Golang lacks sufficient tooling to do this, and it is trivial and fast in JS.
+Javascript is used to convert the initial html file to a PNG and PDF formats. Golang lacks sufficient tooling to do this, and it is trivial and fast in JS.
 
 
 ![Example](example.png)
