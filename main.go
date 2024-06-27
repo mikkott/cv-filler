@@ -34,6 +34,7 @@ type Content struct {
 	Picture      string
 	Citizen      string
 	Github       string
+	Title        string
 	CvSkills     []string
 	CommonSkills []string
 }
@@ -221,7 +222,7 @@ func generateHTMLFile(content *Content) error {
 			</h1>
 			<div class="smallText">
 				<h3>
-				DevOps Engineer
+				{{.Title}}
 				</h3>
 			</div>
 			</div>
