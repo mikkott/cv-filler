@@ -126,7 +126,7 @@ func generateHTMLFile(content *Content) error {
 				<h2>
 				CONTACT
 				</h2>
-				<div class="smallTextContact">
+				<div class="smallTextLeftPanel">
 				<p>
 					<i class="fa fa-phone contactIcon" aria-hidden="true"></i>
 					{{.Phone}}
@@ -153,7 +153,30 @@ func generateHTMLFile(content *Content) error {
 				</p>
 				</div>
 			</div>
-			<div class="item bottomLineSeparator">
+
+			<div class="smallTextLeftPanel bottomLineSeparator">
+				<h2>
+				EDUCATION
+				</h2>
+				<div class="smallText">
+				<p class="bolded white">
+					{{.Education}}
+				</p>
+
+				</div>
+			</div>
+			<div class="smallTextLeftPanel bottomLineSeparator">
+				<h2>
+				CERTIFICATES
+				</h2>
+				<div class="smallText">
+				<p class="bolded white">
+					{{.Certificates}}
+				</p>
+
+				</div>
+			</div>
+						<div class="item bottomLineSeparator">
 				<h2>
 				SKILLS
 				</h2>
@@ -165,28 +188,6 @@ func generateHTMLFile(content *Content) error {
 						</div>
 					</div>
 					{{end}}
-				</div>
-			</div>
-			<div class="item">
-				<h2>
-				EDUCATION
-				</h2>
-				<div class="smallText">
-				<p class="bolded white">
-					{{.Education}}
-				</p>
-
-				</div>
-			</div>
-			<div class="item">
-				<h2>
-				CERTIFICATES
-				</h2>
-				<div class="smallText">
-				<p class="bolded white">
-					{{.Certificates}}
-				</p>
-
 				</div>
 			</div>
 			</div>

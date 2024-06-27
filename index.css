@@ -30,7 +30,7 @@ h3 {
   text-align: justify;
 }
 
-.smallTextContact p {
+.smallTextLeftPanel p {
   font-family: 'Noto Sans', sans-serif;
   text-align: start;
 }
@@ -129,10 +129,6 @@ page {
   margin-bottom: 0.5cm;
 }
 
-page[size="A4"] {  
-  width: 21cm;
-  height: 29.7cm; 
-}
 
 @page {
     size: 21cm 29.7cm;
@@ -188,6 +184,8 @@ page[size="A4"] {
 
 .bottomLineSeparator {
   border-bottom: 0.05cm solid white;
+  padding-bottom: 0.7cm;
+  padding-top: 0.7cm;
 }
 
 .yearsOfExperience {
